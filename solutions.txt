@@ -1,2 +1,0 @@
-zero: found 'overnight' at path [(2, 0), (2, 1), (3, 1), (4, 1), (3, 2), (2, 3), (1, 2), (0, 3), (1, 3)] with value 21 needing 2
-one: found 'freighting' at path [(3, 0), (4, 1), (3, 1), (2, 1), (1, 2), (0, 3), (1, 3), (2, 3), (2, 2), (3, 3)] with value 24 needing 2
