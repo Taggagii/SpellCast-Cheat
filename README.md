@@ -2,7 +2,7 @@
 Cheat for the discord game SpellCast
 
 Upon running a Tkinter window will appear.
-On the left are is a board representing the letters from the screen, fill this board in with the screen's letters.
+On the left is a board representing the letters from the screen, fill this board in with the screen's letters.
 On the right is a board representing the multipliers (double word, double letter, triple letter, etc.), fill these in with '2', 'd', 't', respectively.
 
 Once both boards are filled press the "set board" button (this will save the boards into memory and initalize some data structures needed for processing)
