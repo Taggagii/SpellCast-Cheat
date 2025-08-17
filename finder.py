@@ -245,6 +245,7 @@ if __name__ == "__main__":
             highlight_by_path([i[0] for i in best_two_swap_where], "red")
             label.config(text=f"Two swap solution '{best_two_swap_word}'")
     
+    
     def find_three_solution():
         if not all([all(i) for i in board]):
             cause_error("Character boxes not full")
@@ -256,7 +257,8 @@ if __name__ == "__main__":
 
             zeros.sort(key=lambda x: x[5])
             ones.sort(key=lambda x: x[5])
-            twos.sort(Key=lambda x: x[5])
+            twos = list(twos)  # Convert to a normal list
+            twos.sort(key=lambda x: x[5])
             zero = zeros[-1]
             one = ones[-1]
             two = twos[-1]
