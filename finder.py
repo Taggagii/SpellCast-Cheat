@@ -244,6 +244,36 @@ if __name__ == "__main__":
             highlight_by_path(best_two_swap_path)
             highlight_by_path([i[0] for i in best_two_swap_where], "red")
             label.config(text=f"Two swap solution '{best_two_swap_word}'")
+    
+    def find_three_solution():
+        if not all([all(i) for i in board]):
+            cause_error("Character boxes not full")
+        else:
+            label.config(text="Finding two swap solution")
+            zeros = solver.find_all_words(0)
+            ones = solver.find_all_words(1)
+            twos = solver.find_all_words(2, True)
+
+            zeros.sort(key=lambda x: x[5])
+            ones.sort(key=lambda x: x[5])
+            twos.sort(Key=lambda x: x[5])
+            zero = zeros[-1]
+            one = ones[-1]
+            two = twos[-1]
+            print(f"Zero word {zero}")
+            print(f"One word {one}")
+            print(f"Two word {two}")
+
+            three_swap_words = list(solver.find_all_words(3, True))
+            # word, path, value, swapcount, where swaps used
+            three_swap_words.sort(key=lambda x: x[5])
+            best_three_swap_word = three_swap_words[-1][0]
+            best_three_swap_path = three_swap_words[-1][1]
+            best_three_swap_where = three_swap_words[-1][4]
+            print(three_swap_words[-1])
+            highlight_by_path(best_three_swap_path)
+            highlight_by_path([i[0] for i in best_three_swap_where], "red")
+            label.config(text=f"three swap solution '{best_three_swap_word}'")
 
     def add_multipliers():
         label.config(text="add location of double word")
@@ -288,6 +318,9 @@ if __name__ == "__main__":
     find_one_solution_button.pack()
 
     find_two_solution_button = tk.Button(frame, text="find two swap solution", command=find_two_solution)
+    find_two_solution_button.pack()
+
+    find_two_solution_button = tk.Button(frame, text="find three swap solution", command=find_three_solution)
     find_two_solution_button.pack()
 
     clear_labels_button = tk.Button(frame, text="clear labels", command=clear_labels)
